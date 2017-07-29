@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ScoreBoard</title>
+</head>
+<body>
+<h1>
+Hello</h1>
+<ul>
+{% for scr in scores %}
+	<li>{{scr.user_name}} : {{scr.score}}</li>
+{% endfor%}
+</ul>
+</body>
+</html>

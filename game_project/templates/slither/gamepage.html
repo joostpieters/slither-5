@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ye ek game hai</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'slither/gamepage.css' %}">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+</head>
+<body>
+	<div ng-app="slither" ng-controller="ctrl">
+		<div id="topnav">
+			<ul>
+				<li>Score : [[score]] </li>	
+				<li>Time : [[time]] </li>
+				<li>Level : [[level]] </li>
+			</ul>
+		</div>
+		<div ng-hide="playing" class="msg">	
+			<a href="#" ng-click="gamebegin()"> Start </a>
+			<div ng-hide="final_score">
+				<p> Game Over. </p>
+				<p> You scored [[score]] points. </p>
+			</div>
+		</div>
+		<canvas id="world">	</canvas>	
+		<script type="text/javascript" src="{% static 'JS/gamepage.js' %}"></script>		
+	</div>
+
+</body>
+</html>
